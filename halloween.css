@@ -1,0 +1,76 @@
+body {
+    background-color:rgb(27, 26, 25) !important;
+    max-width: 100%;
+}
+
+.headertext2 {
+    position: absolute;
+    top: 19%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: black;
+    font-weight: 700;
+    font-size: 5vw;
+    text-shadow: 2px 3px 2px rgb(212, 106, 53);
+}
+
+.season {
+    color:  rgb(212, 106, 53);
+    font-weight: 500;
+    font-size: 5vw;
+    text-align: center;
+    margin: 2vw;
+}
+
+.hrmodify {
+    background-color:  rgb(212, 106, 53);
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+.info {
+    color: white;
+    margin: 1vw;
+    padding: 1vw;
+    font-size: 2vw;
+}
+
+.infoheader {
+    text-align: center;
+    color: white;
+    text-shadow: 2px 3px 2px rgb(212, 106, 53);
+    padding: 1vw;
+    font-size: 3vw;
+}
+
+.bottomtext {
+    color:  rgb(212, 106, 53);
+    font-size: 2vw;
+    text-align: center;
+}
+
+.contactus { 
+    font-size: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2vw;
+}
+.contactus:link {
+    color: white;
+}
+
+.contactus:visited {
+    color: rgb(175, 173, 173);
+}
+
+.contactus:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.contactus:active {
+    color: rgb(212, 106, 53);
+    text-decoration: underline;
+}
