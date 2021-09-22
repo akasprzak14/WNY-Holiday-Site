@@ -4,6 +4,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     text-align: center;
+    font-size: 10pt;
     justify-content: space-evenly;
 }
 .topbutton {

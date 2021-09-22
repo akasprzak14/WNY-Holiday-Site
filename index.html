@@ -10,6 +10,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="js/index.js"></script>
+  
 </head>
 <body>
   <div class="container-fluid nomargin">
@@ -43,7 +46,8 @@
 
     <div class="row  nomargin">
       <div class="col nomargin">
-        <div class="header">
+        <div>
+          <img src="img/lights.jpg" alt="Lights" class="headerimg"/>
           <h1 class="headertext2">WNY's Mobile Holiday Experience</h1>
         </div>
       </div>
@@ -52,60 +56,131 @@
 
 
     <div class="row nomargin">
-      <dive class= "col nomargin">
+      <div class= "col nomargin">
         <div>
           <hr class="hrmodify">
         </div>
-      </dive>
+      </div>
     </div>
 
     <div class="row  nomargin">
-      <div class="col-sm-12 col-lg-6 nomargin">
-        <div class= "info">
-          <h3 class="infoheader">Our Mobile Haunted House</h3>
-          <p> Mary had a lamb.</p>
-        </div>
-      </div>
-      <div class="col-sm-12 col-lg-6 nomargin">
+      <div class="col nomargin">
         <div>
-          <img src="img/crewimg.jpg" alt="Cast Photo" class="sidephoto"/>
+          <h3 class="infoheader">Pick Your Holiday</h3>
         </div>
       </div>
     </div>
 
     <div class="row nomargin">
-      <dive class= "col nomargin">
+      <div class= "col nomargin">
         <div>
           <hr class="hrmodify">
         </div>
-      </dive>
+      </div>
     </div>
   
     <div class="row  nomargin">
-      <div class="col-sm-12 col-lg-6 nomargin">
-        <div class= "info">
-          <h3 class="infoheader">Events</h3>
-          <p> Mary had a lamb.</p>
+      <div class="col-sm-12 col-lg-4 nomargin">
+        <a href="#">
+          <img
+            src="img/squarepumpkin.jpg"
+            alt="Pumpkin"
+            class="circleholidayimg"
+            onmouseenter="updateCircleText('halCircleText', true, 'white', 'orange');"
+            onmouseleave="updateCircleText('halCircleText', false, 'white', 'orange');"
+          />
+          <h3
+            id="halCircleText"
+            class="holidaytext"
+            onmouseenter="updateCircleText('halCircleText', true, 'white', 'orange');"
+            onmouseleave="updateCircleText('halCircleText', false, 'white', 'orange');"
+          >
+            Halloween
+          </h3>
+        </a>
+      </div>
+      <div class="col-sm-12 col-lg-4 nomargin">
+        <a href="#">
+          <img 
+            src="img/cookie.jpg" 
+            alt="Cookie" 
+            class="circleholidayimg"
+            onmouseenter="updateCircleText('halCircleText1', true, 'white', 'rgb(121, 13, 5)');"
+            onmouseleave="updateCircleText('halCircleText1', false, 'white', 'rgb(121, 13, 5)');"
+          />
+          <h3 
+            onmouseenter="updateCircleText('halCircleText1', true, 'white', 'rgb(121, 13, 5)');"
+            onmouseleave="updateCircleText('halCircleText1', false, 'white', 'rgb(121, 13, 5)');"
+            id="halCircleText1" 
+            class="holidaytext">Christmas</h3>
+        </a>
+      </div>
+      <div class="col-sm-12 col-lg-4 nomargin">
+        <a href="#">
+          <img 
+            src="img/eggs.jpg" 
+            alt="Eggs" 
+            class="circleholidayimg"
+            onmouseenter="updateCircleText('halCircleText2', true, 'white', 'rgb(167, 95, 139)');"
+            onmouseleave="updateCircleText('halCircleText2', false, 'white', 'rgb(167, 95, 139)');"
+          />
+          <h3 
+            onmouseenter="updateCircleText('halCircleText2', true, 'white', 'rgb(167, 95, 139)');"
+            onmouseleave="updateCircleText('halCircleText2', false, 'white', 'rgb(167, 95, 139)');"
+            id="halCircleText2" 
+            class="holidaytext">Easter</h3>
+        </a>
+      </div>
+    </div>
+
+    <div class="row nomargin">
+      <div class= "col nomargin">
+        <div>
+          <hr class="hrmodify">
         </div>
       </div>
-      <div class="col-sm-12 col-lg-6 nomargin">
+    </div>
+
+    <div class="row  nomargin">
+      <div class="col nomargin">
         <div>
-          <img src="img/hand.jpg" alt="Scary Hand Photo" class="sidephoto"/>
+          <h3 class="infoheader">About Us</h3>
         </div>
       </div>
     </div>
 
     <div class="row nomargin">
-      <dive class= "col nomargin">
+      <div class= "col nomargin">
         <div>
           <hr class="hrmodify">
         </div>
-      </dive>
+      </div>
+    </div>
+
+    <div class="row  nomargin">
+      <div class="col-sm-12 col-lg-6 nomargin">
+        <div>
+          <img src="img/trailer.jpg" alt="Trailer" class="sidephoto"/>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-6 nomargin">
+        <div class= "info">
+          <p> Information oooooo</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row nomargin">
+      <div class= "col nomargin">
+        <div>
+          <hr class="hrmodify">
+        </div>
+      </div>
     </div>
   
     <div class="row nomargin">
       <div class="col nomargin">
-        <p class="bottomtext"> Ready to be scared?</p>
+        <p class="bottomtext"> Want us at your event?</p>
         <a href="#" class="contactus">Contact Us</a>
       </div>
     </div>
