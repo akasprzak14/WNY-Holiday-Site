@@ -1,5 +1,5 @@
 body {
-    background-color:rgb(27, 26, 25) !important;
+    background-image: linear-gradient(rgb(27, 26, 25), black) !important;
     max-width: 100%;
 }
 
@@ -32,7 +32,7 @@ body {
     color: white;
     margin: 1vw;
     padding: 1vw;
-    font-size: 2vw;
+    font-size: 15pt;
 }
 
 .infoheader {
@@ -40,17 +40,17 @@ body {
     color: white;
     text-shadow: 2px 3px 2px rgb(212, 106, 53);
     padding: 1vw;
-    font-size: 3vw;
+    font-size: 20pt;
 }
 
 .bottomtext {
     color:  rgb(212, 106, 53);
-    font-size: 2vw;
+    font-size: 15pt;
     text-align: center;
 }
 
 .contactus { 
-    font-size: 2vw;
+    font-size: 15pt;
     display: flex;
     flex-direction: column;
     justify-content: center;
