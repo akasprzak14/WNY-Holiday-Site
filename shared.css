@@ -44,3 +44,11 @@
     height: 50%;
     box-shadow:2px 3px 2px rgb(40, 40, 40);
 }
+
+.formformat {
+    background-color: bisque;
+    color:black;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 25px;
+}
