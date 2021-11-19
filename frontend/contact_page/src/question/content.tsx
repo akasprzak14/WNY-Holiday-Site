@@ -1,5 +1,7 @@
 import React from 'react';
 import {QuestionForm} from './form';
+import {ContactArea} from '../lib/components/contact_area';
+import {ErrorHeader} from '../lib/components/error_header';
 
 enum FormState {
   Unsubmitted,
@@ -9,13 +11,24 @@ enum FormState {
 
 const SuccessContent: React.FC = (props) => {
   return (
-    <p>Success</p>
+    <>
+      <h3>Thank you!</h3>
+      <p>Your question has been sent. We will get back to you as soon as possible.</p>
+    </>
   );
 }
 
 const ErrorContent: React.FC = (props) => {
   return (
-    <p>Error</p>
+    <>
+      <ErrorHeader>An error has occurred</ErrorHeader>
+      <p>We're sorry, we were unable to send your question. Please reach out directly:</p>
+      <ContactArea>
+        <a href="mailto:brandonkzlwsklczk@gmail.com">brandonkzlwsklczk@gmail.com</a>
+        <br/>
+        <a href="tel:17165489653">716-548-9653</a>
+      </ContactArea>
+    </>
   );
 }
 
