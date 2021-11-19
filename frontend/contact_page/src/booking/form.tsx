@@ -8,17 +8,19 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DateTimePicker from '@mui/lab/DateTimePicker';
 import styled from 'styled-components';
+import {sendBooking} from '../lib/api';
 
 export type BookingFormProps = {
   onSuccess: () => void;
   onError: () => void;
+  onSend: () => void;
 }
 
 const PickerBox = styled.div`
   width: 300px;
 `;
 
-export const BookingForm: React.FC<BookingFormProps> = ({onSuccess, onError}) => {
+export const BookingForm: React.FC<BookingFormProps> = ({onSuccess, onError, onSend}) => {
   const [name, setName] = React.useState<string>("");
   const [email, setEmail] = React.useState<string>("");
   const [event, setEvent] = React.useState<string | null>(null);
@@ -106,14 +108,19 @@ export const BookingForm: React.FC<BookingFormProps> = ({onSuccess, onError}) =>
     validateDate(newDate);
   };
 
-  const sendForm = () => {
+  const sendForm = async () => {
     const nv = validateName(name);
     const ev = validateEmail(email);
     const dv = validateDate(date);
     const bv = validateEvent(event);
     if (nv && ev && dv && bv) {
-      console.log('Send form here');
-      onSuccess();
+      onSend();
+      if (await sendBooking(name, email, event!, date!, message)) {
+        onSuccess();
+      }
+      else {
+        onError();
+      }
     }
   };
 

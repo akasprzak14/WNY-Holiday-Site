@@ -3,13 +3,15 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import {checkEmail} from '../lib/helpers';
+import {sendQuestion} from '../lib/api';
 
 export type QuestionFormProps = {
   onSuccess: () => void;
   onError: () => void;
+  onSend: () => void;
 }
 
-export const QuestionForm: React.FC<QuestionFormProps> = ({onError, onSuccess}) => {
+export const QuestionForm: React.FC<QuestionFormProps> = ({onError, onSuccess, onSend}) => {
   const [name, setName] = React.useState<string>("");
   const [email, setEmail] = React.useState<string>("");
   const [question, setQuestion] = React.useState<string>("");
@@ -70,13 +72,18 @@ export const QuestionForm: React.FC<QuestionFormProps> = ({onError, onSuccess}) 
     validateQuestion(event.target.value);
   };
 
-  const sendForm = () => {
+  const sendForm = async () => {
     const nv = validateName(name);
     const ev = validateEmail(email);
     const qv = validateQuestion(question);
     if (nv && ev && qv) {
-      console.log('Send form here');
-      onSuccess();
+      onSend();
+      if (await sendQuestion(name, email, question)) {
+        onSuccess();
+      }
+      else {
+        onError();
+      }
     }
   };
 

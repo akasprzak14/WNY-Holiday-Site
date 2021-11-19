@@ -1,9 +1,10 @@
 import React from 'react';
 import {BookingForm} from './form';
-import {SuccessContent, ErrorContent} from '../lib/components/form_results';
+import {SuccessContent, ErrorContent, PendingContent} from '../lib/components/form_results';
 
 enum FormState {
   Unsubmitted,
+  Sending,
   Contacted,
   Error
 }
@@ -19,10 +20,12 @@ export const BookingContent: React.FC = (props) => {
           <BookingForm
             onSuccess={() => setState(FormState.Contacted)}
             onError={() => setState(FormState.Error)}
+            onSend={() => setState(FormState.Sending)}
           />
         }
         {state === FormState.Contacted && <SuccessContent/>}
         {state === FormState.Error && <ErrorContent/>}
+        {state === FormState.Sending && <PendingContent/>}
       </div>
     </>
   );

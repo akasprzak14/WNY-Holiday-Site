@@ -3,5 +3,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('contact', views.contact_form),
+    path('booking', views.booking),
+    path('question', views.question)
 ]
