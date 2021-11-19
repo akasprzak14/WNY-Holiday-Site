@@ -4,7 +4,12 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import {checkEmail} from '../lib/helpers';
 
-export const QuestionForm: React.FC = (props) => {
+export type QuestionFormProps = {
+  onSuccess: () => void;
+  onError: () => void;
+}
+
+export const QuestionForm: React.FC<QuestionFormProps> = ({onError, onSuccess}) => {
   const [name, setName] = React.useState<string>("");
   const [email, setEmail] = React.useState<string>("");
   const [question, setQuestion] = React.useState<string>("");
@@ -71,50 +76,46 @@ export const QuestionForm: React.FC = (props) => {
     const qv = validateQuestion(question);
     if (nv && ev && qv) {
       console.log('Send form here');
+      onSuccess();
     }
   };
 
   return (
-    <>
-      <h3 className='infoheader'>Ask Us Your Questions</h3>
-      <div className='formformat'>
-        <Box
-          component="form"
-          sx={{
-            '& .MuiTextField-root': { m: 1, width: '80%' },
-          }}
-          noValidate
-          autoComplete="off"
-        >
-          <TextField
-            label="Name"
-            variant="outlined"
-            value={name}
-            onChange={onNameChange}
-            error={nameError !== ''}
-            helperText={nameError}
-          />
-          <TextField
-            label="Email"
-            variant="outlined"
-            value={email}
-            onChange={onEmailChange}
-            error={emailError !== ''}
-            helperText={emailError}
-          />
-          <TextField
-            label="Question"
-            variant="outlined"
-            multiline
-            rows={4}
-            value={question}
-            onChange={onQuestionChange}
-            error={questionError !== ''}
-            helperText={questionError}
-          />
-          <Button variant="contained" onClick={sendForm}>Send</Button>
-        </Box>
-      </div>
-    </>
+    <Box
+      component="form"
+      sx={{
+        '& .MuiTextField-root': { m: 1, width: '80%' },
+      }}
+      noValidate
+      autoComplete="off"
+    >
+      <TextField
+        label="Name"
+        variant="outlined"
+        value={name}
+        onChange={onNameChange}
+        error={nameError !== ''}
+        helperText={nameError}
+      />
+      <TextField
+        label="Email"
+        variant="outlined"
+        value={email}
+        onChange={onEmailChange}
+        error={emailError !== ''}
+        helperText={emailError}
+      />
+      <TextField
+        label="Question"
+        variant="outlined"
+        multiline
+        rows={4}
+        value={question}
+        onChange={onQuestionChange}
+        error={questionError !== ''}
+        helperText={questionError}
+      />
+      <Button variant="contained" onClick={sendForm}>Send</Button>
+    </Box>
   );
 }

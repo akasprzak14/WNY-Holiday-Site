@@ -1,5 +1,5 @@
-import {BookingForm} from './components/booking';
-import {QuestionForm} from './components/question';
+import {BookingForm} from './booking/form';
+import {QuestionContent} from './question/content';
 
 function ContactForms() {
   return (
@@ -8,7 +8,7 @@ function ContactForms() {
         <BookingForm />
       </div>
       <div className='col-xs-12 col-md-6'>
-        <QuestionForm/>
+        <QuestionContent/>
       </div>
     </div>
   );
