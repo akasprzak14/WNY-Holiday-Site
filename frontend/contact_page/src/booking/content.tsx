@@ -1,5 +1,5 @@
 import React from 'react';
-import {QuestionForm} from './form';
+import {BookingForm} from './form';
 import {SuccessContent, ErrorContent} from '../lib/components/form_results';
 
 enum FormState {
@@ -8,15 +8,15 @@ enum FormState {
   Error
 }
 
-export const QuestionContent: React.FC = (props) => {
+export const BookingContent: React.FC = (props) => {
   const [state, setState] = React.useState<FormState>(FormState.Unsubmitted);
 
   return (
     <>
-      <h3 className='infoheader'>Ask Us Your Questions</h3>
+      <h3 className='infoheader'>Book Us for Your Event</h3>
       <div className='formformat'>
         {state === FormState.Unsubmitted && 
-          <QuestionForm
+          <BookingForm
             onSuccess={() => setState(FormState.Contacted)}
             onError={() => setState(FormState.Error)}
           />
@@ -24,6 +24,6 @@ export const QuestionContent: React.FC = (props) => {
         {state === FormState.Contacted && <SuccessContent/>}
         {state === FormState.Error && <ErrorContent/>}
       </div>
-      </>
+    </>
   );
 }

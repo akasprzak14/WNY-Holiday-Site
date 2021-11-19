@@ -85,6 +85,7 @@ export const QuestionForm: React.FC<QuestionFormProps> = ({onError, onSuccess}) 
       component="form"
       sx={{
         '& .MuiTextField-root': { m: 1, width: '80%' },
+        '& .MuiButton-root': {marginLeft: '8px'}
       }}
       noValidate
       autoComplete="off"
@@ -115,6 +116,7 @@ export const QuestionForm: React.FC<QuestionFormProps> = ({onError, onSuccess}) 
         error={questionError !== ''}
         helperText={questionError}
       />
+      <br/>
       <Button variant="contained" onClick={sendForm}>Send</Button>
     </Box>
   );
