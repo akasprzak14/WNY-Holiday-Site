@@ -45,9 +45,11 @@
 }
 
 .formformat {
-    background-color: bisque;
+    background-color: rgb(236, 234, 230);
     color:black;
     margin-left: 10%;
     margin-right: 10%;
     padding: 25px;
+    border: 2px solid rgb(105, 105, 105);
+    border-radius: 5px;
 }

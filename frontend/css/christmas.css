@@ -1,6 +1,7 @@
 body {
     background-image: linear-gradient(rgb(116, 10, 2), rgb(231, 94, 94)) !important;
     max-width: 100%;
+    min-height: 100vh;
 }
 
 .headertext2 {
