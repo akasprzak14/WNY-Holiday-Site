@@ -19,7 +19,7 @@ export const ErrorContent: React.FC = (props) => {
       <ErrorHeader>An error has occurred</ErrorHeader>
       <p>We're sorry, we were unable to send your request. Please reach out directly:</p>
       <ContactArea>
-        <a href="mailto:brandonkzlwsklczk@gmail.com">brandonkzlwsklczk@gmail.com</a>
+        <a href="mailto:contact@wnymobileholiday.com">contact@wnymobileholiday.com</a>
         <br/>
         <a href="tel:17165489653">716-548-9653</a>
       </ContactArea>

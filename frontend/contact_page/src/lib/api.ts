@@ -1,7 +1,3 @@
-const getHost = (): string => {
-  return 'localhost';
-}
-
 export const sendQuestion = async (name: string, email: string, question: string): Promise<boolean> => {
   try {
     const response = await fetch(
