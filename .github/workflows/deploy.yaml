@@ -1,0 +1,46 @@
+on:
+  pull_request:
+    branches:
+      - master
+
+name: Deploy Frontend
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install NPM
+      run: apt-get install npm
+
+    - name: Install packages
+      run: |
+        cd frontend/contact_page
+        npm i
+
+    - name: Build contact page
+      run: |
+        cd frontend/contact_page
+        npm run build
+
+    - name: Collect files to push
+      run: |
+        mkdir result
+        mv static result/
+        mv *.html result/
+        mv css result/
+        mv js result/
+        mv img result/
+
+    - name: Send files to wnymobileholiday.com
+      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      with:
+        server: wnymobileholiday.com
+        username: github
+        password: ${{ secrets.FTP_DEPLOY_PASSWORD }}
+        local-dir: ./result/
+        server-dir: public_html/
+        port: 21
+        protocol: ftps
