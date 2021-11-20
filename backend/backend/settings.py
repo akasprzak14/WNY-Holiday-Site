@@ -23,9 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)&=hm_8zbif)2zsc&q5%(o(ky^4yr3@ee__3ed-)y5+2s0h7s@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    'backend.wnymobileholiday.com'
+]
 
 
 # Application definition
