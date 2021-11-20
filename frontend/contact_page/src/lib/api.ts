@@ -12,7 +12,7 @@ export const sendQuestion = async (name: string, email: string, question: string
         })
       }
     );
-    return response.status === 200;
+    return response.ok;
   }
   catch (err: any) {
     console.log(err);
@@ -42,7 +42,7 @@ export const sendBooking = async (
         })
       }
     );
-    return response.status === 200;
+    return response.ok;
   }
   catch (err: any) {
     console.log(err);
