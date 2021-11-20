@@ -30,11 +30,11 @@ jobs:
     - name: Collect files to push
       run: |
         mkdir result
-        mv static result/
-        mv *.html result/
-        mv css result/
-        mv js result/
-        mv img result/
+        mv frontend/static result/
+        mv frontend/*.html result/
+        mv frontend/css result/
+        mv frontend/js result/
+        mv frontend/img result/
 
     - name: Send files to wnymobileholiday.com
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
