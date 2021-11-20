@@ -1,10 +1,9 @@
 export const sendQuestion = async (name: string, email: string, question: string): Promise<boolean> => {
   try {
     const response = await fetch(
-      window.location.pathname + 'api/question',
+      location.hostname + 'api/question',
       {
         method: 'post',
-        mode: 'no-cors',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
           name: name,
@@ -30,10 +29,9 @@ export const sendBooking = async (
 ): Promise<boolean> => {
   try {
     const response = await fetch(
-      window.location.pathname + 'api/booking',
+      location.hostname + 'api/booking',
       {
         method: 'post',
-        mode: 'no-cors',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
           name: name,
