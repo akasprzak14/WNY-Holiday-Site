@@ -1,6 +1,7 @@
 export const sendQuestion = async (name: string, email: string, question: string): Promise<boolean> => {
   try {
     const response = await fetch(
+      // eslint-disable-next-line no-restricted-globals
       location.hostname + 'api/question',
       {
         method: 'post',
@@ -29,6 +30,7 @@ export const sendBooking = async (
 ): Promise<boolean> => {
   try {
     const response = await fetch(
+      // eslint-disable-next-line no-restricted-globals
       location.hostname + 'api/booking',
       {
         method: 'post',
