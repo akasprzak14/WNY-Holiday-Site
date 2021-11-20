@@ -1,7 +1,7 @@
 export const sendQuestion = async (name: string, email: string, question: string): Promise<boolean> => {
   try {
     const response = await fetch(
-      'https://wnymobileholiday.com/backend/api/question',
+      'https://backend.wnymobileholiday.com/api/question',
       {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
@@ -29,7 +29,7 @@ export const sendBooking = async (
 ): Promise<boolean> => {
   try {
     const response = await fetch(
-      'https://wnymobileholiday.com/backend/api/booking',
+      'https://backend.wnymobileholiday.com/api/booking',
       {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
