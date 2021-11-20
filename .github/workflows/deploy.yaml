@@ -39,8 +39,8 @@ jobs:
     - name: Send files to wnymobileholiday.com
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
-        server: wnymobileholiday.com
-        username: github
+        server: ftp.wnymobileholiday.com
+        username: wnymjwsi
         password: ${{ secrets.FTP_DEPLOY_PASSWORD }}
         local-dir: ./result/
         server-dir: public_html/
